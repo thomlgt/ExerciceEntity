@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace App.Models
 {
-    public partial class medicalContext : DbContext
+    public partial class MedicalContext : DbContext
     {
-        public medicalContext()
+        public MedicalContext()
         {
         }
 
-        public medicalContext(DbContextOptions<medicalContext> options)
+        public MedicalContext(DbContextOptions<MedicalContext> options)
             : base(options)
         {
         }
@@ -26,7 +26,6 @@ namespace App.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySql("server=localhost;port=3306;user=root;password=root;database=medical", x => x.ServerVersion("8.0.19-mysql"));
             }
         }
