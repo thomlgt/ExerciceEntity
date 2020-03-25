@@ -1,13 +1,14 @@
 ﻿using App.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace App.Repositories.Impl
 {
-    public class ClientRepository : IRepository<Client>
+    public class ClientRepository : IClientRepository
     {
         private MedicalContext context;
 
@@ -16,7 +17,7 @@ namespace App.Repositories.Impl
             this.context = context;
         }
 
-        public IEnumerable<Client> FindAll()
+        public IEnumerable FindAll()
         {
             return context.Client;
         }
